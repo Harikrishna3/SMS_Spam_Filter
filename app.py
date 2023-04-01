@@ -33,8 +33,7 @@ def transform_text(text):
     return " ".join(y)
 
 class CustomUnpickler(pickle.Unpickler):
-
-    def find_class(self, module, name):
+def find_class(self, module, name):
         if name == 'Manager':
             from settings import Manager
             return Manager
@@ -43,8 +42,7 @@ class CustomUnpickler(pickle.Unpickler):
 tfidf = CustomUnpickler(open('file_path.pkl', 'rb')).load()
 
 class CustomUnpickler(pickle.Unpickler):
-
-    def find_class(self, module, name):
+def find_class(self, module, name):
         if name == 'Manager':
             from settings import Manager
             return Manager
