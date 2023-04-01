@@ -32,23 +32,15 @@ def transform_text(text):
 
     return " ".join(y)
 
-class CustomUnpickler(pickle.Unpickler):
-def find_class(self, module, name):
-        if name == 'Manager':
-            from settings import Manager
-            return Manager
-        return super().find_class(module, name)
 
-tfidf = CustomUnpickler(open('file_path.pkl', 'rb')).load()
+import class_def
 
-class CustomUnpickler(pickle.Unpickler):
-def find_class(self, module, name):
-        if name == 'Manager':
-            from settings import Manager
-            return Manager
-        return super().find_class(module, name)
-
-model = CustomUnpickler(open('file_path.pkl', 'rb')).load()
+if __name__=='__main__':
+    with open('test_data.pkl', 'rb') as f:
+        tfidf = pickle.load(f)
+       
+    with open('test_data.pkl', 'rb') as f:
+        users = pickle.load(f)    
 
 #tfidf = pickle.load(open('vectorizer.pkl','rb'))
 #model = pickle.load(open('model.pkl','rb'))
