@@ -36,11 +36,11 @@ def transform_text(text):
 import class_def
 
 if __name__=='__main__':
-    with open('test_data.pkl', 'rb') as f:
+    with open('vectorizer.pkl', 'rb') as f:
         tfidf = pickle.load(f)
        
-    with open('test_data.pkl', 'rb') as f:
-        users = pickle.load(f)    
+    with open('model.pkl', 'rb') as f:
+        model = pickle.load(f)    
 
 #tfidf = pickle.load(open('vectorizer.pkl','rb'))
 #model = pickle.load(open('model.pkl','rb'))
