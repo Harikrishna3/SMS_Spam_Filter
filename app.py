@@ -4,13 +4,13 @@ import string
 from nltk.corpus import stopwords
 import nltk
 from nltk.stem.porter import PorterStemmer
-
+ from nltk.tokenize import wordpunct_tokenize
 ps = PorterStemmer()
 nltk.download('punkt')
 
 def transform_text(text):
     text = text.lower()
-    text = nltk.word_tokenize(text)
+    text = word_tokenize(text)
 
     y = []
     for i in text:
